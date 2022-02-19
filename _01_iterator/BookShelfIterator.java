@@ -1,3 +1,5 @@
+package _01_iterator;
+
 public class BookShelfIterator implements Iterator {
     protected BookShelf bookShelf;
     protected int index;

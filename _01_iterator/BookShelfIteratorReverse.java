@@ -1,3 +1,5 @@
+package _01_iterator;
+
 public class BookShelfIteratorReverse implements Iterator {
     private BookShelf bookShelf;
     private int index;

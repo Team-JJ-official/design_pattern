@@ -1,3 +1,5 @@
+package _01_iterator;
+
 public class BookShelfIteratorBidirectional extends BookShelfIterator implements IteratorBidirectional {
     public BookShelfIteratorBidirectional(BookShelfBidirectional bookShelfBidirectional) {
         super(bookShelfBidirectional);

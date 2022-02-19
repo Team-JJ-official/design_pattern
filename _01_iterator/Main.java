@@ -1,3 +1,5 @@
+package _01_iterator;
+
 public class Main {
     public static void main(String[] args) {
         String[] bookNames = {"Alice", "Bob", "Curl", "Dump"};
