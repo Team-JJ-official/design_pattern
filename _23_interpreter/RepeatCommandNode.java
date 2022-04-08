@@ -1,5 +1,8 @@
 package _23_interpreter;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class RepeatCommandNode extends Node {
     private int number;
     private Node commandListNode;
@@ -14,5 +17,11 @@ public class RepeatCommandNode extends Node {
     public String toString() {
         return "[repeat " + number + " " + commandListNode + "]";
     }
-    
+    public Iterator<Node> iterator() {
+        ArrayList<Node> l = new ArrayList<Node>();
+        for (int i = 0; i < number; i++) {
+            l.add(commandListNode);
+        }
+        return l.iterator();
+    }
 }

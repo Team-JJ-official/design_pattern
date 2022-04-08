@@ -1,6 +1,7 @@
 package _23_interpreter;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CommandListNode extends Node {
     private ArrayList<Node> list = new ArrayList<Node>();
@@ -24,6 +25,9 @@ public class CommandListNode extends Node {
 
     public String toString() {
         return list.toString();
+    }
+    public Iterator<Node> iterator() {
+        return list.iterator();
     }
     
 }

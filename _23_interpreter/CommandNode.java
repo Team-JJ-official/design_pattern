@@ -1,5 +1,8 @@
 package _23_interpreter;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class CommandNode extends Node {
     private Node node;
 
@@ -17,5 +20,10 @@ public class CommandNode extends Node {
     @Override
     public String toString() {
         return node.toString();
+    }
+    public Iterator<Node> iterator() {
+        ArrayList<Node> l = new ArrayList<Node>();
+        l.add(node);
+        return l.iterator();
     }
 }
