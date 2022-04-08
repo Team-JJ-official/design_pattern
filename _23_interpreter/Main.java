@@ -12,6 +12,7 @@ public class Main {
                 System.out.println(String.format("text = '%s'", text));
                 Node node = new ProgramNode();
                 node.parse(new Context(text));
+                node.accept(new PrintVisitor());
                 System.out.println("node = " + node);
             }
             reader.close();

@@ -12,10 +12,13 @@ class Point {
         this.x += p.x;
         this.y += p.y;
     }
+    public String toString() {
+        return String.format("x: %d, y: %d", x, y);
+    }
 }
 
 public class PrintVisitor implements Visitor {
-    private Point p;
+    private Point p = new Point(0, 0);
     private int dir = 0;
     private Point[] dxy = {
         new Point(0, 1),
@@ -30,17 +33,23 @@ public class PrintVisitor implements Visitor {
             Node n = it.next();
             if (n instanceof PrimitiveCommandNode) {
                 String name = n.toString();
-                if (name == "go") {
+                // System.out.println(name);
+                if (name.equals("go")) {
                     go();
-                } else if (name == "right") {
+                } else if (name.equals("right")) {
                     right();
-                } else if (name == "left") {
+                } else if (name.equals("left")) {
                     left();
                 }
+                printCurrent();
             } else {
                 n.accept(this);
             }
         }
+    }
+
+    public void printCurrent() {
+        System.out.println(String.format("now: %s, dir: %s", p, dxy[dir]));
     }
     
     private void go() {
